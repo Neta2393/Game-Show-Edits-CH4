@@ -15,7 +15,9 @@ When you arrive on the webpage you will see a Start button. When you click the s
 ## Trial and Error
 While working on the following repo I came across some obstacles , but as I am learning in coding bootcamp just because it is a struggle now doesnt mean it will be later on. I am learning to rely on my resources and learning how to get better as time goes on. Now I can more accurately see the mistakes that I have made in the code. At times It is hard and frustrating when I cant get something, but I have no thought to quit learning. I hope that you can see the growth I have made in the following repo and I hope you enjoy it. 
 
+[!img]
 
+![neta2393 github io_Game-Show-Edits-CH4_](https://user-images.githubusercontent.com/128006949/235047816-9cffa812-8f58-4976-88ed-128a0e210648.png)
 
 
 
