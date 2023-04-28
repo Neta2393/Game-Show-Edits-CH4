@@ -1,11 +1,11 @@
+// Defined the startButton, nextButton, questionContainerElement, questionElement, and answerButtonsElement
+// Due to having different elements that I wanted to function correctly in the code I opted to use let instead of const or var just to see if it made a differnce in the code
 let startButton = document.getElementById('start-btn')
 let nextButton = document.getElementById('next-btn')
 let questionContainerElement = document.getElementById('question-container')
 let timerElement = document.querySelector(".timer-count");
 let questionElement = document.getElementById('question')
 let answerButtonsElement = document.getElementById('answer-buttons')
-// Defined the startButton, nextButton, questionContainerElement, questionElement, and answerButtonsElement
-// Due to having different elements that I wanted to function correctly in the code I opted to use let instead of const or var
 // The next block of code is have the questions appear in a random order and not go from top to bottom or bottom to top
 // The currentQuestionIndex is placed to ensure that the shuffled questions are coming from the currentQuestionIndex
 let randomQuestions, currentQuestionIndex
@@ -45,7 +45,7 @@ function startTimer() {
     }
   }, 1000);
 }
-
+// Set a function to have the next button go to the next question
 function setNextQuestion() {
   resetState()
   showQuestion(randomQuestions[currentQuestionIndex])
@@ -54,8 +54,9 @@ function setNextQuestion() {
 function showQuestion(question) {
   questionElement.innerText = question.question
   question.answers.forEach(answer => {
-    const button = document.createElement('button')
+    let button = document.createElement('button')
     button.innerText = answer.text
+//     Set a class list for the btn function
     button.classList.add('btn')
     if (answer.correct) {
       button.dataset.correct = answer.correct
@@ -77,13 +78,17 @@ function selectAnswer(e) {
   let selectedButton = e.target
   let correct = selectedButton.dataset.correct
   setStatusClass(document.body, correct)
+//   Function to set a class for the answer button
   Array.from(answerButtonsElement.children).forEach(button => {
     setStatusClass(button, button.dataset.correct)
   })
+//   Loop created to continue to populate the random questions from the list of questions that were created in the JavaScript file
   if (randomQuestions.length > currentQuestionIndex + 1) {
     nextButton.classList.remove('hide')
   } else {
+//     Created a restart function within the start button function
     startButton.innerText = 'Restart'
+//     Removed the hidden button after the loop has cycled thrpugh each time
     startButton.classList.remove('hide')
   }
 }
@@ -96,7 +101,7 @@ function setStatusClass(element, correct) {
     element.classList.add('wrong')
   }
 }
-
+// Created a class list for the corrrect and wrong answers of the questions
 function clearStatusClass(element) {
   element.classList.remove('correct')
   element.classList.remove('wrong')
@@ -160,6 +165,8 @@ let questions = [
   ]
  }
 ]
+
+// Attempted to again set the timer but struggled. Maybe next time I can call the set timer function allong with the other functions at the top of the page. 
 let timerId = setInterval(countdown, 1000);
 function countdown() {
   if (timeLeft == -1) {
