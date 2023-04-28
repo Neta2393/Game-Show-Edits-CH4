@@ -5,6 +5,7 @@
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
 }
+   
 body {
   padding: 0%;
   margin:0%;
@@ -59,6 +60,14 @@ body {
   /* Placed the next and start button to the bottom right of the container by using float */
   float:right
 }
+
+/* Set a style element with --hue to change the color of the correct answer to yello when it is clicked in the quiz */
+.btn.correct {
+  --hue: var(--hue-correct);
+  color: yellow;
+}
+
+
 
 .hide{
   display: none;
